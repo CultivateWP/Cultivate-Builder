@@ -1,0 +1,22 @@
+/* Archive Header
+--------------------------------------------- */
+
+.archive-header {
+	background: var(--wp--preset--color--quaternary);
+}
+
+.archive-description > *:first-child {
+	margin-top: 0;
+}
+
+.archive-description > *:last-child {
+	margin-bottom: 0;
+}
+
+.archive-header .breadcrumb {
+	margin-bottom: 24px;
+}
+
+.archive-header__inner {
+	padding-bottom: 24px;
+}

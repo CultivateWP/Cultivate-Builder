@@ -1,0 +1,27 @@
+{
+    "name": "cwp/quick-links",
+    "title": "Quick Links",
+    "description": "",
+    "style": "block-quick-links",
+    "category": "cultivatewp",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": [ "fsci", "category" ],
+    "acf": {
+        "mode": "preview",
+		"renderTemplate": "render.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": false,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    }
+}

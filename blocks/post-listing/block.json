@@ -1,0 +1,28 @@
+{
+    "name": "cwp/post-listing",
+    "title": "Post Listing",
+    "description": "",
+	"style": "block-post-listing",
+    "category": "cultivatewp",
+    "icon": "",
+    "apiVersion": 2,
+	"providesContext": { "acf/fields": "data" },
+    "keywords": [ "fsri" ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "render.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    }
+}

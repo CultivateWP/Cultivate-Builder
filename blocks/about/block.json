@@ -1,0 +1,35 @@
+{
+    "name": "cwp/about",
+    "title": "About",
+    "description": "",
+    "style": "block-about",
+    "category": "cultivatewp",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": [
+    ],
+    "acf": {
+        "mode": "preview",
+		"renderTemplate": "render.php"
+    },
+    "styles": [
+    ],
+    "supports": {
+        "align": false,
+        "anchor": false,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": true,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+	},
+	"attributes": {
+		"backgroundColor": {
+			"type": "string",
+			"default": "quaternary"
+		}
+	}
+}

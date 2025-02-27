@@ -1,0 +1,29 @@
+{
+    "name": "cwp/content-image",
+    "title": "Content Image",
+    "description": "",
+    "style": "block-content-image",
+    "category": "cultivatewp",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": [
+    ],
+    "acf": {
+        "mode": "preview",
+		"renderTemplate": "render.php"
+    },
+    "styles": [
+    ],
+    "supports": {
+        "align": false,
+        "anchor": false,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    }
+}

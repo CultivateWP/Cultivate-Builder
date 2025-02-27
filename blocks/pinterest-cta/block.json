@@ -1,0 +1,29 @@
+{
+    "name": "cwp/pinterest-cta",
+    "title": "Pinterest CTA",
+    "description": "",
+    "style": "block-pinterest-cta",
+    "category": "cultivatewp",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": [
+    ],
+    "acf": {
+        "mode": "preview",
+		"renderTemplate": "render.php"
+    },
+    "styles": [
+    ],
+    "supports": {
+        "align": false,
+        "anchor": false,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    }
+}

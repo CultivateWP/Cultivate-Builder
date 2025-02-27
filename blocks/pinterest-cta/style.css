@@ -1,0 +1,34 @@
+.block-pinterest-cta {
+	background: var(--wp--preset--color--tertiary);
+	padding: 16px;
+}
+
+.block-pinterest-cta__icon {
+	line-height: 0;
+}
+
+.block-pinterest-cta__title {
+	font-size: var(--wp--preset--font-size--large);
+	font-weight: 700;
+	line-height: var(--wp--custom--line-height--medium);
+	margin: 0;
+}
+
+.editor-styles-wrapper .block-pinterest-cta a {
+	pointer-events: none;
+}
+
+.block-pinterest-cta {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+
+.block-pinterest-cta__icon {
+	margin-right: 16px;
+}
+
+.block-pinterest-cta a {
+	margin-left: auto;
+	white-space: nowrap;
+}

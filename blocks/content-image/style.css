@@ -1,0 +1,16 @@
+.block-ci {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 40px;
+	row-gap: 16px;
+	align-items: center;
+}
+
+.block-ci > * {
+	flex-basis: 300px;
+	flex-grow: 1;
+}
+
+.block-ci--reverse {
+	flex-direction: row-reverse;
+}

@@ -1,0 +1,19 @@
+.block-about--has-image {
+	display: grid;
+	grid-gap: 24px;
+}
+
+@media only screen and (min-width: 700px) {
+	.block-about--has-image {
+		grid-template-columns: 1fr 2fr;
+	}
+
+	.block-about--has-image .block-about__content {
+		display: flex;
+		align-items: center;
+	}
+
+	.block-area-sidebar .block-about--has-image {
+		grid-template-columns: 1fr;
+	}
+}

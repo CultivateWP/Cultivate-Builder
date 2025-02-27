@@ -1,0 +1,111 @@
+/* WordPress SEO
+--------------------------------------------- */
+
+.breadcrumb {
+	font-size: var(--wp--preset--font-size--tiny);
+	font-weight: 700;
+	margin: 0 auto 16px;
+	max-width: var(--wp--custom--layout--page);
+
+	.archive-header &,
+	.post-header & {
+		max-width: 100%;
+		grid-column: 1 / -1;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	body.content-sidebar .site-header + & {
+		max-width: 100%;
+		margin: var(--wp--custom--layout--block-gap) var(--wp--custom--layout--padding) calc( -1 * var(--wp--custom--layout--block-gap) );
+
+		& > span {
+			display: block;
+			max-width: var(--wp--custom--layout--wide);
+			margin-inline: auto;
+		}
+	}
+}
+
+/* FAQ
+--------------------------------------------- */
+
+.schema-faq-section {
+	border: 2px solid var(--wp--preset--color--quaternary);
+}
+
+.schema-faq > * + * {
+	margin-top: var(--wp--custom--layout--block-gap);
+}
+
+.schema-faq-question {
+	display: block;
+	font-size: var(--wp--preset--font-size--large);
+	padding: var(--wp--custom--layout--block-gap);
+}
+
+.schema-faq-answer {
+	border-top: 2px solid var(--wp--preset--color--quaternary);
+	padding: var(--wp--custom--layout--block-gap);
+	margin: 0;
+}
+
+.schema-faq--has-toggle .schema-faq-question {
+	padding-right: 44px + 8px;
+	position: relative;
+}
+
+.schema-faq-toggle {
+	background: transparent url(../icons/utility/minus-circle.svg) no-repeat center;
+	background-size: 16px;
+	border: none;
+	cursor: pointer;
+	width: 44px;
+	height: 44px;
+	position: absolute;
+	right: 0;
+	top: calc( 50% - 22px );
+}
+
+.schema-faq-section.active .schema-faq-toggle {
+	background: transparent url(../icons/utility/plus-circle.svg) no-repeat center;
+	background-size: 16px;
+}
+
+/* Table of Contents
+--------------------------------------------- */
+
+.yoast-table-of-contents {
+	background: var(--wp--preset--color--quaternary);
+	padding: 24px;
+
+	ul {
+		margin-bottom: 0;
+		padding-bottom: 0;
+		padding-left: 24px;
+
+		li {
+			padding: 0 0 6px 6px;
+		}
+	}
+
+	&--no-js {
+		padding-bottom: calc( 44px +  24px );
+
+		ul li:nth-of-type(n+4) {
+			display: none;
+		}
+	}
+
+	&__footer {
+		padding-inline: var(--wp--custom--layout--block-gap);
+		height: 44px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&[hidden] {
+			display: none;
+		}
+	}
+}
