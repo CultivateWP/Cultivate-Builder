@@ -1,20 +1,22 @@
 /* Site Header
 ---------------------------------------------------------------------------------------------------- */
 
-.site-header {
-	background: var(--wp--preset--color--quaternary);
-	color: var(--wp--preset--color--foreground);
-	position: relative;
-
+body {
 	--cwp-logo-width: 372px;
 	--cwp-logo-height: 72px;
 	--cwp-logo-margin: 16px;
 
-	@include media("<=mobile_menu") {
+	@media only screen and (max-width: 767px) {
 		--cwp-logo-width: 200px;
 		--cwp-logo-height: 38px;
 		--cwp-logo-margin: 8px;
 	}
+}
+
+.site-header {
+	background: var(--wp--preset--color--quaternary);
+	color: var(--wp--preset--color--foreground);
+	position: relative;
 
 	.wrap {
 		display: grid;

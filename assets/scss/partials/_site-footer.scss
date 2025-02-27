@@ -40,7 +40,8 @@
 	&__logo {
 		display: flex;
 		width: auto;
-		max-width: var(--wp--custom--footer-logo--width);
+		max-width: var(--cwp-logo-width);
+		height: var(--cwp-logo-height);
 
 		// Text logo
 		@include heading;
@@ -52,6 +53,14 @@
 			width: 100%;
 			height: 100%;
 		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-position: left center;
+		}
+
 	}
 
 
