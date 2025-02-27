@@ -17,7 +17,7 @@ function cwp_breadcrumbs() {
 		return;
 	}
 
-	$cwp_hide_breadcrumbs = get_field('cwp_hide_breadcrumbs');
+	$cwp_hide_breadcrumbs = get_post_meta( get_the_ID(), 'cwp_hide_breadcrumbs', true );
 
 	if ( !$cwp_hide_breadcrumbs ) {
 		if ( function_exists( 'yoast_breadcrumb' ) ) {
