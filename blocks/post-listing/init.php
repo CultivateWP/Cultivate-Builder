@@ -212,6 +212,7 @@ function settings() {
 		}
 	}
 
+	$settings = apply_filters( 'cultivate_pro/post_listing/settings', $settings );
 	return $settings;
 }
 
