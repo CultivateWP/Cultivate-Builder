@@ -807,7 +807,8 @@ function post_summary_title() {
  */
 function post_summary_recipe_key() {
 	if ( function_exists( 'Cultivate\Recipe_Key\display' ) ) {
-		\Cultivate\Recipe_Key\display( [ 'link' => false ] );
+		$link = get_option( 'options_cwp_recipe_key_link' );
+		\Cultivate\Recipe_Key\display( [ 'link' => $link ] );
 	}
 }
 
