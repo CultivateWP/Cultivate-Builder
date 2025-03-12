@@ -785,7 +785,12 @@ function post_summary_image( $layout = '', $current_post = 0 ) {
 		$image_attr['sizes'] = $settings['layouts'][ $layout ]['size_override'][ $current_post ];
 	}
 
-	echo '<div class="post-summary__image"><a href="' . esc_url( get_permalink() ) . '" tabindex="-1" aria-hidden="true">';
+	$attr = '';
+	if ( function_exists( 'Cultivate\Affiliate_Links\post_type_slug' ) && get_post_type() === Affiliate_Links\post_type_slug() ) {
+		$attr .= ' rel="nofollow" target="_blank"';
+	}
+
+	echo '<div class="post-summary__image"><a href="' . esc_url( get_permalink() ) . '" tabindex="-1" aria-hidden="true"' . $attr . '>';
 	echo wp_get_attachment_image( $image_id, $image_size, null, $image_attr );
 	echo '</a></div>';
 }
@@ -799,8 +804,15 @@ function post_summary_title() {
 	if ( isset( $cp_loop->cp_no_title ) ) {
 		$tag = 'h2';
 	}
-	echo '<' . esc_attr( $tag ) . ' class="post-summary__title"><a href="' . esc_url( get_permalink() ) . '">' . esc_html( get_the_title() ) . '</a></' . esc_attr( $tag ) . '>';
+
+	$attr = '';
+	if ( function_exists( 'Cultivate\Affiliate_Links\post_type_slug' ) && get_post_type() === Affiliate_Links\post_type_slug() ) {
+		$attr .= ' rel="nofollow" target="_blank"';
+	}
+
+	echo '<' . esc_attr( $tag ) . ' class="post-summary__title"><a href="' . esc_url( get_permalink() ) . '"' . $attr . '>' . esc_html( get_the_title() ) . '</a></' . esc_attr( $tag ) . '>';
 }
+
 
 /**
  * Post Summary Recipe Key
@@ -867,7 +879,7 @@ function post_summary_buy_now( $layout = '', $current_post = 0 ) {
 
 	$url = get_post_meta( get_the_ID(), $meta_key, true );
 	if ( ! empty( $url ) ) {
-		echo cwp_button( [ 'url' => $url, 'title' => 'Buy Now'], [ 'style' => 'arrow', 'container' => true, 'align' => 'center' ] );
+		echo cwp_button( [ 'url' => $url, 'title' => 'Buy Now', 'target' => '_blank', 'rel' => 'nofollow' ], [ 'style' => 'arrow', 'container' => true, 'align' => 'center' ] );
 	}
 
 }

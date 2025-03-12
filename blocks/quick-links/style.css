@@ -104,8 +104,11 @@
 	z-index: 2;
 }
 
-.block-quick-links__inner img {
-	z-index: 1;
+.style-square:not(.label-position-under) .block-quick-links__inner a {
+	color: var(--wp--preset--color--primary);
+}
+
+.block-quick-links__inner img {	z-index: 1;
 	width: 100%;
 	aspect-ratio: var(--wp--custom--quick-links--aspect-ratio);
 	object-fit: cover;
