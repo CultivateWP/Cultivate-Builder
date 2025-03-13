@@ -291,5 +291,5 @@ function label_position() {
 		}
 	}
 
-	return $position;
+	return apply_filters( 'cultivate_pro/quick_links/label_position', $position );
 }
