@@ -119,6 +119,8 @@ if ( ! function_exists( 'cwp_setup' ) ) :
 		add_image_size( 'cwp_small', 400, 0, false ); // leave this for mobile srcset
 		add_image_size( 'cwp_square', 300, 300, true );
 
+		// Hubbub, move hidden pins to bottom
+		add_filter( 'dpsp_pinterest_hidden_images_after_content', '__return_true' );
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
