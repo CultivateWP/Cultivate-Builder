@@ -371,8 +371,7 @@ function cwp_strip_tags_by_classname( $html_to_parse, $classname ) {
  * Get Recipe ID
  */
 function cwp_get_recipe_id( $id = false ) {
-	global $post;
-	$content = ! empty( $id ) ? get_post_field( 'post_content', $id ) : $post->post_content;
+	$content = ! empty( $id ) ? get_post_field( 'post_content', $id ) : get_queried_object()->post_content;
 
 	if ( ! class_exists( 'WPRM_Recipe_Manager' ) ) {
 		return false;
