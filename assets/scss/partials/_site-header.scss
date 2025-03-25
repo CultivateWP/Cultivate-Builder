@@ -61,7 +61,6 @@ body {
 		display: block;
 		max-width: var(--cwp-logo-width);
 		width: 100%;
-		height: var(--cwp-logo-height);
 		grid-area: logo;
 		justify-self: center;
 		margin: var(--cwp-logo-margin) 0;
@@ -71,6 +70,11 @@ body {
 		color: var(--wp--preset--color--foreground);
 		font-size: var(--wp--preset--font-size--x-large);
 		text-decoration: none;
+
+		// Image logo
+		&:not(.site-header__logo-text) {
+			height: var(--cwp-logo-height);
+		}
 
 		img {
 			width: 100%;

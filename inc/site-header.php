@@ -57,7 +57,13 @@ function cwp_site_logo( $icon = 'primary' ) {
  * Mobile Menu
  */
 function cwp_site_header() {
-	echo '<a href="' . esc_url( home_url() ) . '" rel="home" class="site-header__logo" aria-label="' . esc_attr( get_bloginfo( 'name' ) ) . ' Home">' . cwp_site_logo() . '</a>';
+
+	$classes = [ 'site-header__logo' ];
+	$image_id = get_option( 'options_cwp_site_logo' );
+	if ( empty( $image_id ) ) {
+		$classes[] = 'site-header__logo-text';
+	}
+	echo '<a href="' . esc_url( home_url() ) . '" rel="home" class="' . esc_attr( join( ' ', $classes ) ) . '" aria-label="' . esc_attr( get_bloginfo( 'name' ) ) . ' Home">' . cwp_site_logo() . '</a>';
 	echo cwp_search_toggle();
 	echo cwp_mobile_menu_toggle();
 
