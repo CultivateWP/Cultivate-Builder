@@ -45,6 +45,8 @@ function cwp_first_term( $args = [] ) {
 		if ( ! empty( $term_id ) ) {
 			$term = get_term_by( 'term_id', $term_id, $args['taxonomy'] );
 		}
+	} elseif ( function_exists( 'aioseo' ) ) {
+		$term = aioseo()->standalone->primaryTerm->getPrimaryTerm( $post_id, $args['taxonomy'] );
 	}
 
 	if ( ! $term || is_wp_error( $term ) ) {
