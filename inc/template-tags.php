@@ -52,18 +52,14 @@ function cwp_post_date( $atts = [] ) {
 	$include_publish = isset( $atts['include_publish' ] ) ? filter_var( $atts['include_publish' ], FILTER_VALIDATE_BOOLEAN ) : true;
 	$include_updated = isset( $atts['include_updated' ] ) ? filter_var( $atts['include_updated'], FILTER_VALIDATE_BOOLEAN ) : true;
 	$sep             = ! empty( $atts['sep'] ) ? $atts['sep'] : ', ';
-	$publish_label   = ! empty( $atts['publish_label'] ) ? $atts['publish_label'] : '';
+	$publish_label   = ! empty( $atts['publish_label'] ) ? $atts['publish_label'] : 'Published';
 	$updated_label   = ! empty( $atts['updated_label'] ) ? $atts['updated_label'] : 'Updated';
 	$class           = ! empty( $atts['class'] ) ? $atts['class'] : 'post-date';
 	$format          = ! empty( $atts['format'] ) ? $atts['format'] : 'F j, Y';
 	$post_date       = $include_publish ? $publish_label . ' ' . get_the_date( $format, $post_id ) : '';
 	$single_date     = ! empty( $atts['single_date'] ) ? $atts['single_date'] : false;
 
-	if ( empty( $post_date ) || ! empty( $single_date ) ) {
-		$sep = '';
-	}
-
-	$updated_date    = $include_updated ? $sep . $updated_label . ' ' . get_the_modified_date( $format, $post_id ) : '';
+	$updated_date    = $include_updated ? $updated_label . ' ' . get_the_modified_date( $format, $post_id ) : '';
 	if ( ! ( get_the_date( 'U', $post_id ) < ( get_the_modified_date( 'U', $post_id ) - WEEK_IN_SECONDS ) ) ) {
 		$updated_date = '';
 	}
@@ -78,8 +74,12 @@ function cwp_post_date( $atts = [] ) {
 		$author = ' by <a href="' . esc_url( get_author_posts_url( $author_id ) ) . '">' . get_the_author_meta( 'display_name', $author_id ) . '</a>';
 	}
 
+	if ( empty( $post_date ) || empty( $updated_date ) ) {
+		$sep = '';
+	}
+
 	if ( ! empty( $post_date ) || ! empty( $updated_date ) || ! empty( $author ) ) {
-		echo '<p class="' . esc_attr( $class ) . '">' . $post_date . $updated_date . $author . '</p>';
+		echo '<p class="' . esc_attr( $class ) . '">' . $updated_date . $sep . $post_date . $author . '</p>';
 	}
 
 }
