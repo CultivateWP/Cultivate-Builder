@@ -23,7 +23,7 @@
             "taxonomy": "",
             "allow_archives": 1,
             "multiple": 0,
-            "allow_null": 0
+            "allow_null": 1
         },
         {
             "key": "field_65039c34f4cb9",
