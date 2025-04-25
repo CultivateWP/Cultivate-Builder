@@ -179,6 +179,7 @@
 	row-gap: 16px;
 }
 
+.layout-2x8-grid,
 .layout-sidebar-4up-grid,
 .layout-sidebar-6up-grid {
 	--cwp-columns: 2;

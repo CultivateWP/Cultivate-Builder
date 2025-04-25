@@ -63,6 +63,11 @@ function settings() {
 				'posts_per_page' => 1,
 				'sizes' => '(max-width: 1200px) 100vw, 1200px'
 			],
+			'2x8-grid' => [
+				'label' => __( '2x8 Grid', 'cultivate_textdomain' ),
+				'posts_per_page' => 16,
+				'sizes' => '(max-width: 600px) 50vw, 276px'
+			],
 			'3up-full' => [
 				'label' => __( '3up Full', 'cultivate_textdomain' ),
 				'posts_per_page' => 3,

@@ -71,8 +71,8 @@
 	--cwp-gap: 8px;
 }
 
-.block-quick-links__header {
-	margin-bottom: var(--wp--custom--layout--block-gap);
+.block-quick-links__header:has(.wp-block-heading, .wp-block-paragraph) {
+    margin-bottom: var(--wp--custom--layout--block-gap);
 }
 
 .block-quick-links__inner {

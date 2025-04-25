@@ -373,10 +373,22 @@ function cwp_strip_tags_by_classname( $html_to_parse, $classname ) {
  * Get Recipe ID
  */
 function cwp_get_recipe_id( $id = false ) {
-	$content = ! empty( $id ) ? get_post_field( 'post_content', $id ) : get_queried_object()->post_content;
-
 	if ( ! class_exists( 'WPRM_Recipe_Manager' ) ) {
 		return false;
+	}
+
+	if( ! empty( $id ) ) {
+		$content = get_post_field( 'post_content', $id );
+	} else {
+		if( is_admin() ) {
+			global $post;
+			if ( ! $post instanceof \WP_Post ) {
+				return false;
+			}
+			$content = $post->post_content;
+		} else {
+			$content = get_queried_object()->post_content;
+		}
 	}
 
 	$recipes = \WPRM_Recipe_Manager::get_recipe_ids_from_content( $content );
