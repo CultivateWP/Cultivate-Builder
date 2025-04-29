@@ -184,24 +184,6 @@ function settings() {
 		]
 	];
 
-	// Remove certain layouts based on aspect ratio
-	// -- wide
-	if ( $settings['aspect_ratio'] > 1 ) {
-		unset( $settings['layouts']['3up-featured'] );
-		unset( $settings['layouts']['4up-featured'] );
-		unset( $settings['layouts']['4up-list'] );
-		unset( $settings['layouts']['5up-featured'] );
-		unset( $settings['layouts']['5up-list'] );
-		unset( $settings['layouts']['6up-list'] );
-		unset( $settings['layouts']['sidebar-4up-list'] );
-		unset( $settings['layouts']['sidebar-6up-list'] );
-
-	// -- tall
-	} elseif( $settings['aspect_ratio'] < 1 ) {
-		unset( $settings['layouts']['4up-2x2'] );
-	}
-
-
 	if ( function_exists( 'Cultivate\Affiliate_Links\post_type_slug' ) ) {
 		$aff_post_type = Affiliate_Links\post_type_slug();
 		$aff_tax = Affiliate_Links\taxonomy_slug();
