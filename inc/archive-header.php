@@ -37,7 +37,7 @@ function cwp_archive_header() {
 
 
 	} elseif ( is_search() ) {
-		$title = 'Search Results';
+		$title = 'Search Results: ' . get_search_query();
 
 	} elseif ( is_archive() ) {
 		$title = false;
