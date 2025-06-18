@@ -28,7 +28,7 @@ $args['orderby'] = get_field( 'orderby' );
 $args['post__in'] = get_field( 'post__in' );
 
 $args['post_type'] = get_field( 'post_type' );
-if ( empty( $args['post_type'] ) && 1 === count( $settings['post_types'] ) ) {
+if ( empty( $args['post_type'] ) ) {
 	$args['post_type'] = array_key_first( $settings['post_types'] );
 }
 foreach( $settings['post_types'] as $post_type => $taxonomies ) {
