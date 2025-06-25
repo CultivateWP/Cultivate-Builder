@@ -32,10 +32,8 @@
 
 .schema-faq-section {
 	border: 2px solid var(--wp--preset--color--quaternary);
-}
-
-.schema-faq > * + * {
-	margin-top: var(--wp--custom--layout--block-gap);
+	padding: 0;
+	margin-block: var(--wp--custom--layout--block-gap);
 }
 
 .schema-faq-question {
