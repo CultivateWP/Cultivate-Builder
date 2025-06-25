@@ -53,6 +53,10 @@
 	width: 100%;
 }
 
+.block-post-listing__more.wp-block-button__link {
+    width: auto;
+}
+
 @supports( aspect-ratio: 1 ) {
 	.post-summary__image img {
 		aspect-ratio: var(--wp--custom--aspect-ratio);
