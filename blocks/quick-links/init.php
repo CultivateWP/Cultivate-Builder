@@ -43,11 +43,16 @@ function types() {
 	$types = [];
 
 	foreach( $settings['post_types'] as $post_type => $taxonomies ) {
+		if ( ! post_type_exists( $post_type ) ) {
+			continue;
+		}
 
 		if ( ! empty( $taxonomies ) ) {
 			foreach( $taxonomies as $taxonomy ) {
-				$types['choices'][ $taxonomy['field'] ] = $taxonomy['label'];
-				$types['taxonomy'][ $taxonomy['field'] ] = $taxonomy['tax'];
+				if ( taxonomy_exists( $taxonomy['tax'] ) ) {
+					$types['choices'][ $taxonomy['field'] ] = $taxonomy['label'];
+					$types['taxonomy'][ $taxonomy['field'] ] = $taxonomy['tax'];
+				}
 			}
 		}
 

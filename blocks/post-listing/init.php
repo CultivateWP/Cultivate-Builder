@@ -3,7 +3,6 @@
  * Post Listing block
  *
  * @package      CultivateBuilder
- * @subpackage   blocks/post-listing/01
  * @author       CultivateWP
  * @since        1.0.0
  * @license      GPL-2.0+
@@ -350,7 +349,9 @@ function register_field_group() {
 
 		$choices = [];
 		foreach( $post_types as $post_type => $tax ) {
-			$choices[ $post_type ] = get_post_type_object( $post_type )->labels->singular_name;
+			if ( post_type_exists( $post_type ) ) {
+				$choices[ $post_type ] = get_post_type_object( $post_type )->labels->singular_name;
+			}
 		}
 
 		$fields[] = [
@@ -374,6 +375,9 @@ function register_field_group() {
 	}
 
 	foreach( $post_types as $post_type => $taxonomies ) {
+		if ( ! post_type_exists( $post_type ) ) {
+			continue;
+		}
 		$conditional_logic = $has_post_types ? array(
 			array(
 				array(
@@ -389,24 +393,26 @@ function register_field_group() {
 			) ) : false;
 
 		foreach( $taxonomies as $taxonomy ) {
-			$fields[] = [
-				'key' => 'field_5e6a8aa253d2' . $tax_count,
-				'label' => __( 'Limit to', 'cultivate_textdomain' ) . ' ' . $taxonomy['label'],
-				'name' => $taxonomy['field'],
-				'type' => 'taxonomy',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => $conditional_logic,
-				'taxonomy' => $taxonomy['tax'],
-				'field_type' => 'multi_select',
-				'all_null' => 1,
-				'add_term' => 0,
-				'save_terms' => 0,
-				'load_terms' => 0,
-				'return_format' => 'id',
-				'multiple' => 1,
-			];
-			$tax_count++;
+			if ( taxonomy_exists( $taxonomy['tax'] ) ) {
+				$fields[] = [
+					'key' => 'field_5e6a8aa253d2' . $tax_count,
+					'label' => __( 'Limit to', 'cultivate_textdomain' ) . ' ' . $taxonomy['label'],
+					'name' => $taxonomy['field'],
+					'type' => 'taxonomy',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => $conditional_logic,
+					'taxonomy' => $taxonomy['tax'],
+					'field_type' => 'multi_select',
+					'all_null' => 1,
+					'add_term' => 0,
+					'save_terms' => 0,
+					'load_terms' => 0,
+					'return_format' => 'id',
+					'multiple' => 1,
+				];
+				$tax_count++;
+			}
 		}
 	}
 
