@@ -636,7 +636,7 @@ function display( $args, $post_id = 0, $is_preview = false ) {
 	if ( ! empty( $settings['read_more']['button_style'] ) ) {
 		$container_class = 'wp-block-button is-style-' . $settings['read_more']['button_style'];
 	}
-	if( $read_more_text && $read_more_url ) {
+	if( $read_more_text && $read_more_url && ! is_wp_error( $read_more_url ) ) {
 		$aria = ! empty( $read_more_aria_label ) ? ' aria-label="' . esc_attr( $read_more_aria_label ) . '"' : '';
 		$read_more = '<a class="' . esc_attr( join( ' ', $read_more_classes ) ) . '" href="' . esc_url( $read_more_url ) . '"' . $aria . '>' . esc_html( $read_more_text ) . '</a>';
 	}

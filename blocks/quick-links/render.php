@@ -70,6 +70,9 @@ if ( ! empty( $items ) ) {
 				continue;
 			}
 			$url = get_term_link( $term_id, $taxonomy );
+			if ( is_wp_error( $url ) ) {
+				continue;
+			}
 			$image_id = get_term_meta( $term_id, 'image', true );
 
 		} elseif( in_array( $item['type'], $types['post_object'] ) ) {

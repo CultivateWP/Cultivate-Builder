@@ -41,7 +41,8 @@ function cwp_post_header_avatar( $size = 48 ) {
  * Post Header Date
  */
 function cwp_post_header_date( $atts = [] ) {
-	cwp_post_date( [ 'class' => 'post-header__date', 'format' => 'M d, Y' ] );
+	$atts = array_merge( [ 'publish_label' => 'published:', 'class' => 'post-header__date', 'format' => 'M d, Y' ], $atts );
+	cwp_post_date( $atts );
 }
 
 /**
