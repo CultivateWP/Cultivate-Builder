@@ -173,6 +173,7 @@ function output() {
 		}
 
 		$class = $heading->getAttribute( 'class' );
+		$classes = explode( ' ', $class );
 		$id = $heading->getAttribute( 'id' );
 		if ( empty( $id ) ) {
 			$id = sanitize_title( $heading->nodeValue );
@@ -186,7 +187,7 @@ function output() {
 			$id    = 'wprm-recipe-container-' . recipe_id();
 		}
 
-		if ( 'table-of-contents' === $id ) {
+		if ( 'table-of-contents' === $id || in_array( 'toc-exclude', $classes ) ) {
 			continue;
 		}
 
